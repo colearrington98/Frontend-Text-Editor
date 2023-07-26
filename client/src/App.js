@@ -4,6 +4,8 @@ import Editor from  "./Editor"
 function App() {
 
   const [html, setHtml] = useState('')
+  const [css, setCss] = useState('')
+  const [js, setJs] = useState('')
 
   return (
     <>
@@ -14,8 +16,16 @@ function App() {
         value={html}
         onChange={setHtml}
         />
-        <Editor />
-        <Editor />
+        <Editor
+        language="css"
+        displayName="CSS"
+        value={css}
+        onChange={setCss} />
+        <Editor
+        language="js"
+        displayName="JS"
+        value={js}
+        onChange={setJs} />
       </div>
       <div className="pane">
         <iframe
