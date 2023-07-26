@@ -7,7 +7,18 @@ import 'codemirror/mode/css/css'
 import { Controlled as ControlledEditor } from 'react-codemirror2'
 
 
-export default function Editor() {
+export default function Editor(props) {
+    const {
+        language,
+        displayName,
+        value,
+        onChange
+    } = props
+
+    function handleChange(editor, data, value) {
+        onChange(value)
+    }
+
     return (
         <div className="editor-container">
             <div className="editor-title">
